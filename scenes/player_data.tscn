@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8dwr6d7lrw28"]
+
+[ext_resource type="Script" path="res://scripts/player_data.gd" id="1_hw5g8"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_hw5g8")
+
+[node name="playername" type="TextEdit" parent="."]
+offset_left = 1.0
+offset_top = 33.0
+offset_right = 160.0
+offset_bottom = 70.0
+placeholder_text = "name"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 10.0
+offset_right = 102.0
+offset_bottom = 36.0
+text = "Player name:"
+
+[node name="playerid" type="OptionButton" parent="."]
+offset_left = 2.0
+offset_top = 93.0
+offset_right = 160.0
+offset_bottom = 125.0
+item_count = 3
+popup/item_0/text = "Mann"
+popup/item_0/id = 0
+popup/item_1/text = "Frau"
+popup/item_1/id = 1
+popup/item_2/text = "Roboter"
+popup/item_2/id = 2
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 69.0
+offset_right = 42.0
+offset_bottom = 95.0
+text = "ID:"
+
+[node name="weiter" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 155.0
+offset_right = 60.0
+offset_bottom = 186.0
+text = "weiter"
+
+[connection signal="pressed" from="weiter" to="." method="_on_button_pressed"]
