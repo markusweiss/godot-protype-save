@@ -46,4 +46,12 @@ offset_right = 60.0
 offset_bottom = 186.0
 text = "weiter"
 
+[node name="load" type="Button" parent="."]
+offset_left = 1.0
+offset_top = 228.0
+offset_right = 95.0
+offset_bottom = 259.0
+text = "load data..."
+
 [connection signal="pressed" from="weiter" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="load" to="." method="_on_load_pressed"]
