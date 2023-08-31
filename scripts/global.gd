@@ -1,8 +1,10 @@
 extends Node
 
 
-var player_name = "<gd_name>"
-var player_id = "<gd_id>"
+var player_name: String = "<gd_name>"
+var player_id: String= "<gd_id>"
+
+const SAVEGAME: String = "res://savegame.json"
 
 
 func save():
@@ -15,16 +17,16 @@ func save():
 
 func save_data():
 	print ("data")
-	var save_game = FileAccess.open("res://savegame.dat", FileAccess.WRITE)
+	var save_game = FileAccess.open(SAVEGAME, FileAccess.WRITE)
 	var json_string = JSON.stringify(save())
 	save_game.store_line(json_string)
 	
 
 func load_data():
-	if not FileAccess.file_exists("res://savegame.dat"):
+	if not FileAccess.file_exists(SAVEGAME):
 		return
 	
-	var save_game = FileAccess.open("res://savegame.dat", FileAccess.READ)	
+	var save_game = FileAccess.open(SAVEGAME, FileAccess.READ)	
 	
 	while  save_game.get_position() < save_game.get_length():
 		var json_string = save_game.get_line()
