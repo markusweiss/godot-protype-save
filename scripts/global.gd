@@ -4,6 +4,10 @@ extends Node
 var player_name: String = "<gd_name>"
 var player_id: String= "<gd_id>"
 
+var player_food: int = 8
+var player_energy: int = 10
+var player_round: int = 1
+
 const SAVEGAME: String = "res://savegame.json"
 
 
@@ -11,7 +15,10 @@ func save():
 	print("save")
 	var save_dict = {
 		"player_name" : player_name,
-		"player_id" : player_id
+		"player_id" : player_id,
+		"player_food" : player_food,
+		"player_energy" : player_energy,
+		"player_round" : player_round
 	}
 	return save_dict
 
