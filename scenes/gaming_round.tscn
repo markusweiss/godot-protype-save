@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb5k6nxqoh8p6"]
+
+[ext_resource type="Script" path="res://scripts/gaming_round.gd" id="1_008n8"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_008n8")
+
+[node name="SaveButton" type="Button" parent="."]
+offset_left = 1.0
+offset_top = 199.0
+offset_right = 44.0
+offset_bottom = 230.0
+text = "save"
+
+[node name="Ergebnis" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Ergebnis"
+
+[connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]

@@ -9,3 +9,4 @@ func _on_button_pressed():
 
 func _on_load_pressed():
 	Global.load_data()
+	get_tree().change_scene_to_file("res://scenes/gaming_data.tscn")
