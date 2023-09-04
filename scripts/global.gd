@@ -41,4 +41,10 @@ func load_data():
 		var parse_result = json.parse(json_string)
 		var node_data = json.get_data()
 		
+		player_name = node_data.player_name
+		player_id = node_data.player_id
+		player_food = node_data.player_food
+		player_energy = node_data.player_energy
+		player_round = node_data.player_round
+		
 		print(node_data)
