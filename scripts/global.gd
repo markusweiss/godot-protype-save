@@ -8,6 +8,8 @@ var player_food: int = 8
 var player_energy: int = 10
 var player_round: int = 1
 
+var test: int = 1
+
 const SAVEGAME: String = "res://savegame.json"
 
 

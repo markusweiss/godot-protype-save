@@ -8,5 +8,23 @@ func _ready():
 
 func _on_weiter_pressed():
 	Global.player_round += 1
-	Global.player_food += $FoodAnzahl.text.to_int()
+	
+	randomize()
+	var randomErnte = randi_range(1,5)
+	var factorMapping = {
+		1: 0.5,
+		2: 1.0,
+		3: 1.5,
+		4: 2.0,
+		5: 2.5
+		}
+	
+	Global.test = randomErnte
+	
+	var assignedFactor = factorMapping[randomErnte]
+	
+	print ($FoodAnzahl.value)
+	print (assignedFactor)
+	print ($FoodAnzahl.value * assignedFactor)
+	Global.player_food += $FoodAnzahl.value * assignedFactor
 	get_tree().change_scene_to_file("res://scenes/gaming_round.tscn")
