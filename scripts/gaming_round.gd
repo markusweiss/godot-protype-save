@@ -9,11 +9,7 @@ var wetter = {
 }
 
 func _ready():
-		$Ergebnis.text = "Das Wetter war " + wetter[Global.test] + "\n\nEs ist Runde " + str(Global.player_round) + " und Du hast jetzt " + str(Global.player_food) + " Scheffel Nahrung."
-
-
-func _process(delta):
-	pass
+		$Ergebnis.text = "Das Wetter war " + wetter[Global.weather] + "\n\nEs ist Runde " + str(Global.player_round) + " und Du hast jetzt " + str(Global.player_food) + " Scheffel Nahrung."
 
 
 func _on_save_button_pressed():
