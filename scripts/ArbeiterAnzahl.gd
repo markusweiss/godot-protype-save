@@ -2,5 +2,5 @@ extends SpinBox
 
 
 func _ready():
-	max_value = Global.player_food/20
+	max_value = Global.player_ap
 

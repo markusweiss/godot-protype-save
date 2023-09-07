@@ -1,9 +1,12 @@
 extends Node
 
+func  _process(delta):
+	$Aktionspunkte.text = str(Global.player_ap)
+
 
 func _ready():
 	$Anrede.text = "Hallo " + str(Global.player_name) + " Du bist ein/eine " + str(Global.player_id) + " und hast " + str(Global.player_food) + " Scheffel Nahrung"
-	$Energy.text = "Es ist Runde " + str(Global.player_round) + " und Du hast " + str(Global.worker) + " Arbeiter. Sie kosten " + str(Global.worker * 5) + " Nahrung"
+	$Energy.text = "Es ist Runde " + str(Global.player_round) + " und Du hast " + str(Global.worker) + " Arbeiter. Sie kosten " + str(Global.worker * 2) + " Nahrung"
 
 
 func _on_weiter_pressed():
@@ -34,13 +37,17 @@ func _on_weiter_pressed():
 	Global.weather = randomErnte
 	Global.worker += $ArbeiterAnzahl.value
 	
-	Global.player_food -= $FoodAnzahl.value * 0.75
-	Global.player_food -= $ArbeiterAnzahl.value * (20 + 5)
+	#Global.player_food -= $FoodAnzahl.value * 0.75
+	#Global.player_food -= $ArbeiterAnzahl.value * (20 + 5)
 	
 	var assignedFactor = factorMapping[randomErnte]
 	
 	print ($FoodAnzahl.value)
 	print (assignedFactor)
 	print ($FoodAnzahl.value * assignedFactor)
-	Global.player_food += $FoodAnzahl.value * assignedFactor * Global.worker
+	
+	Global.player_food += $FoodAnzahl.value * 10 * assignedFactor * Global.worker
+	Global.player_food -= 2 * Global.worker 
 	get_tree().change_scene_to_file("res://scenes/gaming_round.tscn")
+
+

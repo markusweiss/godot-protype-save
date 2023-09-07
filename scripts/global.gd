@@ -1,5 +1,6 @@
 extends Node
 
+var player_ap: int = 3
 
 var player_name: String = "<gd_name>"
 var player_id: String= "<gd_id>"
@@ -19,6 +20,11 @@ var tools = {
 	"pick" : 0
 }
 
+
+func calcFood(menge):
+	player_food -= menge
+	print(player_food)
+	
 
 func save():
 	print("save")
