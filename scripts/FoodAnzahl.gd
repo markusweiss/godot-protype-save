@@ -1,7 +1,5 @@
 extends SpinBox
 
 
-func _ready():
+func _process(delta):
 	max_value = Global.player_ap
-
-

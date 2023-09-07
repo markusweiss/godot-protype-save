@@ -22,9 +22,9 @@ text = "Feldarbeit"
 
 [node name="Energy" type="Label" parent="."]
 offset_left = 3.0
-offset_top = 50.0
-offset_right = 43.0
-offset_bottom = 73.0
+offset_top = 42.0
+offset_right = 61.0
+offset_bottom = 68.0
 text = "Energie"
 
 [node name="Arbeiter" type="Label" parent="."]
@@ -76,4 +76,11 @@ offset_right = 117.0
 offset_bottom = 102.0
 text = "Aktionspunkte"
 
+[node name="Feld1" type="CheckBox" parent="."]
+offset_left = 95.0
+offset_top = 138.0
+offset_right = 119.0
+offset_bottom = 162.0
+
 [connection signal="pressed" from="Weiter" to="." method="_on_weiter_pressed"]
+[connection signal="pressed" from="Feld1" to="." method="_on_feld_1_pressed"]

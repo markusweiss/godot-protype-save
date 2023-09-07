@@ -1,7 +1,8 @@
 extends Node
 
 func  _process(delta):
-	$Aktionspunkte.text = str(Global.player_ap)
+	$Aktionspunkte.text = str(Global.player_ap) + " AP"
+
 
 
 func _ready():
@@ -51,3 +52,10 @@ func _on_weiter_pressed():
 	get_tree().change_scene_to_file("res://scenes/gaming_round.tscn")
 
 
+
+
+func _on_feld_1_pressed():
+	if($Feld1.is_pressed()):
+		Global.player_ap -= 1
+	else:
+		Global.player_ap += 1
