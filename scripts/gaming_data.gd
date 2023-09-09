@@ -47,7 +47,7 @@ func _on_weiter_pressed():
 	print (assignedFactor)
 	print ($FoodAnzahl.value * assignedFactor)
 	
-	Global.player_food += $FoodAnzahl.value * 10 * assignedFactor * Global.worker
+	Global.player_food += $FoodAnzahl.value * 10 * assignedFactor * (Global.worker + Global.tools["pick"] * 2)
 	Global.player_food -= 2 * Global.worker 
 	get_tree().change_scene_to_file("res://scenes/gaming_round.tscn")
 

@@ -21,4 +21,6 @@ Global="*res://scripts/global.gd"
 
 [display]
 
-window/stretch/scale=1.5
+window/size/viewport_width=2304
+window/size/viewport_height=1296
+window/stretch/scale=3.0
