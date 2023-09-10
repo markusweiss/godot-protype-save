@@ -2,6 +2,8 @@ extends Node
 
 var player_ap: int = 3
 
+var player_fight: String = ""
+
 var player_name: String = "<gd_name>"
 var player_id: String= "<gd_id>"
 

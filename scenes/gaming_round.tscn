@@ -6,10 +6,10 @@
 script = ExtResource("1_008n8")
 
 [node name="SaveButton" type="Button" parent="."]
-offset_left = 3.0
-offset_top = 278.0
-offset_right = 46.0
-offset_bottom = 309.0
+offset_left = 5.0
+offset_top = 346.0
+offset_right = 48.0
+offset_bottom = 377.0
 text = "save"
 
 [node name="Ergebnis" type="Label" parent="."]
@@ -33,9 +33,16 @@ text = "Defence"
 
 [node name="Attack" type="Label" parent="."]
 offset_left = 3.0
-offset_top = 187.0
+offset_top = 180.0
 offset_right = 53.0
-offset_bottom = 213.0
+offset_bottom = 206.0
 text = "Attack"
+
+[node name="Fight" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 263.0
+offset_right = 44.0
+offset_bottom = 289.0
+text = "Fight"
 
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
