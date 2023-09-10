@@ -31,4 +31,11 @@ offset_right = 67.0
 offset_bottom = 174.0
 text = "Defence"
 
+[node name="Attack" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 187.0
+offset_right = 53.0
+offset_bottom = 213.0
+text = "Attack"
+
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
