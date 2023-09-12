@@ -76,11 +76,18 @@ offset_right = 117.0
 offset_bottom = 102.0
 text = "Aktionspunkte"
 
-[node name="Feld1" type="CheckBox" parent="."]
-offset_left = 95.0
-offset_top = 138.0
-offset_right = 119.0
-offset_bottom = 162.0
+[node name="CheckBox1" type="CheckBox" parent="."]
+offset_left = 102.0
+offset_top = 137.0
+offset_right = 126.0
+offset_bottom = 161.0
+
+[node name="CheckBox2" type="CheckBox" parent="."]
+offset_left = 129.0
+offset_top = 137.0
+offset_right = 153.0
+offset_bottom = 161.0
 
 [connection signal="pressed" from="Weiter" to="." method="_on_weiter_pressed"]
-[connection signal="pressed" from="Feld1" to="." method="_on_feld_1_pressed"]
+[connection signal="toggled" from="CheckBox1" to="." method="_on_check_box_toggled"]
+[connection signal="toggled" from="CheckBox2" to="." method="_on_check_box_toggled"]

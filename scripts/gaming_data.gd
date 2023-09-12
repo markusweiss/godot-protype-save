@@ -52,10 +52,10 @@ func _on_weiter_pressed():
 	get_tree().change_scene_to_file("res://scenes/gaming_round.tscn")
 
 
-
-
-func _on_feld_1_pressed():
-	if($Feld1.is_pressed()):
+func _on_check_box_toggled(checked):
+	if(checked):
 		Global.player_ap -= 1
 	else:
 		Global.player_ap += 1
+
+
