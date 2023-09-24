@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://lpbvpr2iokb1"]
+
+[ext_resource type="Script" path="res://scripts/defender.gd" id="1_6u2d0"]
+[ext_resource type="Texture2D" uid="uid://b2c8ugeb7y37r" path="res://assets/defender.png" id="1_glnr6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_35kv0"]
+height = 22.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_py1ci"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_glnr6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="defender" type="CharacterBody2D"]
+script = ExtResource("1_6u2d0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_35kv0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_py1ci")

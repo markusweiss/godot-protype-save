@@ -18,15 +18,7 @@ func _ready():
 		$Attack.text = "\n\nDu hast Angriff: " + str(Global.worker + Global.tools["bow"] * 4 + Global.tools["axe"] * 2 + Global.tools["pick"] * 1)
 		
 		if(Global.player_round >= 10):
-			var fightValue = Global.worker + Global.tools["bow"] * 4 + Global.tools["axe"] * 2 + Global.tools["pick"] * 1 + Global.worker + Global.tools["bow"] * 2 + Global.tools["axe"] * 2 + Global.tools["pick"] * 1
-			print (fightValue)
-			if (fightValue >= 79):
-				Global.player_fight = "gewonnen"
-			else:
-				Global.player_fight = "verloren"
-			
-			
-			$Fight.text = "Es ist Runde " + str(Global.player_round) + " es kommt zum Kampf.\nDu hast " + Global.player_fight	
+			get_tree().change_scene_to_file("res://scenes/fight.tscn")
 		
 func _on_save_button_pressed():
 	Global.save_data()
