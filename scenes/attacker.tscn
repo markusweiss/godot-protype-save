@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8ui4t1yhloip"]
+
+[ext_resource type="Script" path="res://scripts/attacker.gd" id="1_bklxh"]
+[ext_resource type="Texture2D" uid="uid://cud0ppfcgd323" path="res://assets/attacker.png" id="1_ihono"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ypo2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jku5y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ihono")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="attacker" type="CharacterBody2D" groups=["attacker"]]
+script = ExtResource("1_bklxh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2ypo2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jku5y")
