@@ -21,6 +21,5 @@ func get_direction_to_defender():
 			return Vector2.ZERO
 	else:
 		# Handle the case when there's no defender
-		return Vector2.ZERO	
-
+		return Vector2.ZERO
 

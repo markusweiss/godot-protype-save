@@ -17,7 +17,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="arrow" type="Area2D"]
+[node name="arrow" type="Area2D" groups=["arrow"]]
 script = ExtResource("1_8kj3d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -26,3 +26,5 @@ shape = SubResource("RectangleShape2D_8gxrp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kukiu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

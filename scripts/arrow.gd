@@ -1,20 +1,25 @@
 extends Area2D
 
-
-const MAX_SPEED = 200
 var startPosition
-var projectileSpeed = 2
+var projectileSpeed = 100
+var targetNode: Node2D = null
 
 func _ready():
-	startPosition = self.position.x
+	startPosition = self.global_position
 	print(startPosition)
-	
-func _process(delta):	
-	await get_tree().create_timer(1.0).timeout
 	shoot()
+	
+func _process(delta):
+	if targetNode != null:
+		var direction = (targetNode.global_position - self.global_position).normalized()
+		self.global_position += direction * projectileSpeed * delta
 
 func shoot():
-	var attacker_node = get_tree().get_first_node_in_group("attacker") as Node2D
-	if attacker_node != null:
-		self.position.x += projectileSpeed
-		print(attacker_node.global_position.x)
+	var attackers = get_tree().get_nodes_in_group("attacker")
+	if attackers.size() > 0:
+		targetNode = attackers[0] as Node2D
+
+func _on_body_entered(body):
+	if body.is_in_group("attacker"):
+		print("kill")
+		queue_free()

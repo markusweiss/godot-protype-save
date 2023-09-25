@@ -10,7 +10,7 @@ func _ready():
 	else:
 		Global.player_fight = "verloren"
 	
-	$Fight.text = "Es ist Runde " + str(Global.player_round) + " es kommt zum Kampf.\nDu hast " + Global.player_fight	
+	$Fight.text = "Es ist Runde " + str(Global.player_round) + " es kommt zum Kampf.\nDu hast " + Global.player_fight
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
