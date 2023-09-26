@@ -1,22 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dicyibvlvtegq"]
+[gd_scene load_steps=3 format=3 uid="uid://dicyibvlvtegq"]
 
 [ext_resource type="Script" path="res://scripts/fight.gd" id="1_i5t5k"]
 [ext_resource type="PackedScene" uid="uid://lpbvpr2iokb1" path="res://scenes/defender.tscn" id="2_qqlkn"]
-[ext_resource type="PackedScene" uid="uid://c8ui4t1yhloip" path="res://scenes/attacker.tscn" id="3_vwj5r"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_i5t5k")
 
-[node name="attacker2" parent="." instance=ExtResource("3_vwj5r")]
-position = Vector2(391, 201)
-
 [node name="defender" parent="." instance=ExtResource("2_qqlkn")]
-position = Vector2(71, 83)
+position = Vector2(41, 228)
 
 [node name="Fight" type="Label" parent="."]
 offset_right = 858.0
 offset_bottom = 408.0
 text = "test"
-
-[node name="attacker" parent="." instance=ExtResource("3_vwj5r")]
-position = Vector2(340, 135)

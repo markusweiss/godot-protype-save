@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://lpbvpr2iokb1"]
+[gd_scene load_steps=5 format=3 uid="uid://lpbvpr2iokb1"]
 
 [ext_resource type="Script" path="res://scripts/defender.gd" id="1_6u2d0"]
 [ext_resource type="Texture2D" uid="uid://b2c8ugeb7y37r" path="res://assets/defender.png" id="1_glnr6"]
-[ext_resource type="PackedScene" uid="uid://cr8y8o1788ewo" path="res://scenes/arrow.tscn" id="2_nl3uy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_35kv0"]
 height = 22.0
@@ -20,8 +19,6 @@ animations = [{
 
 [node name="defender" type="CharacterBody2D" groups=["defender"]]
 script = ExtResource("1_6u2d0")
-
-[node name="arrow" parent="." instance=ExtResource("2_nl3uy")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_35kv0")
