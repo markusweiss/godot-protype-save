@@ -2,12 +2,6 @@ extends CharacterBody2D
 
 const MAX_SPEED = 100
 
-func _ready():
-	while(true):
-		await get_tree().create_timer(1.0).timeout
-		spawnProjectile()
-		
-
 
 func _process(delta):
 	var direction = get_direction_to_attacker()
@@ -33,3 +27,10 @@ func spawnProjectile():
 	projectile.position = self.position
 	#get_parent().add_child(projectile)
 	get_parent().call_deferred("add_child", projectile)
+	
+
+
+func _on_timer_timeout():
+	var attacker_node = get_tree().get_first_node_in_group("attacker") as Node2D
+	if attacker_node != null:
+		spawnProjectile()

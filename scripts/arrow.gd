@@ -2,34 +2,21 @@ extends Area2D
 
 var startPosition
 var projectileSpeed = 100
-var targetNode: Node2D = null
-var timePassed = 0.0
-var maxFlightTime = 2.0
 
 func _ready():
 	startPosition = self.global_position
-	print(startPosition)
-	shoot()
-	
+
+
 func _process(delta):
-	if targetNode != null:
-		timePassed += delta
-		
-		# Berechne die Position des Pfeils auf der Parabel
-		var t = timePassed / maxFlightTime
-		var yOffset = -4.0  # Die Vertikale Verschiebung für die Parabel
-		var x = lerp(startPosition.x, targetNode.global_position.x, t)
-		var y = lerp(startPosition.y, targetNode.global_position.y + yOffset, t)
-		self.global_position = Vector2(x, y)
-		
+	var attacker_node = get_tree().get_first_node_in_group("attacker") as Node2D
+	if attacker_node != null:
+		#print(attacker_node.global_position)
+		#print(startPosition)
+		var direction = (attacker_node.global_position - self.global_position).normalized()
+		var new_position = self.global_position + direction * projectileSpeed * delta
+		self.global_position = new_position
+	else:
+		return Vector2.ZERO
 
-func shoot():
-	var attackers = get_tree().get_nodes_in_group("attacker")
-	if attackers.size() > 0:
-		targetNode = attackers[0] as Node2D
-
-func _on_body_entered(body):
-	if body.is_in_group("attacker"):
-		print("kill")
-		queue_free()
-
+func _on_area_entered(area):
+	queue_free()

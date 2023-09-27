@@ -2,7 +2,7 @@ extends Node
 
 var x = 0
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	while x < 5:
 		x += 1
@@ -15,14 +15,9 @@ func _ready():
 		Global.player_fight = "gewonnen"
 	else:
 		Global.player_fight = "verloren"
-	
 	$Fight.text = "Es ist Runde " + str(Global.player_round) + " es kommt zum Kampf.\nDu hast " + Global.player_fight
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
 func spawnAttacker():
 	var attacker = preload("res://scenes/attacker.tscn").instantiate()
 	#attacker.position = self.position
